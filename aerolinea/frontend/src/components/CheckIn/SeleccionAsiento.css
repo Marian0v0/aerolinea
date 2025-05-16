@@ -1,0 +1,230 @@
+.seleccion-asiento-container {
+  max-width: 800px;
+  margin: var(--space-xl) auto;
+  padding: var(--space-lg);
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  animation: fadeIn var(--transition-normal) forwards;
+}
+
+.seleccion-asiento-container h2 {
+  color: var(--color-primary);
+  text-align: center;
+  margin-bottom: var(--space-lg);
+  font-size: 1.8rem;
+  position: relative;
+  padding-bottom: var(--space-sm);
+}
+
+.seleccion-asiento-container h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: var(--color-secondary);
+  border-radius: 3px;
+}
+
+.mapa-avion {
+  margin: var(--space-xl) 0;
+  position: relative;
+}
+
+.cabina {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.cabina-frontal {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  color: var(--color-white);
+  padding: var(--space-sm) var(--space-xl);
+  border-radius: 30px;
+  margin-bottom: var(--space-lg);
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+.leyenda {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.leyenda-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.9rem;
+  color: var(--color-dark);
+}
+
+.asiento {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--border-radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+  border: 2px solid transparent;
+  position: relative;
+}
+
+.asiento.disponible {
+  background-color: var(--color-white);
+  border-color: var(--color-success);
+  color: var(--color-success);
+}
+
+.asiento.disponible:hover {
+  background-color: rgba(40, 167, 69, 0.1);
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(40, 167, 69, 0.2);
+}
+
+.asiento.seleccionado {
+  background-color: var(--color-success);
+  color: var(--color-white);
+  transform: scale(1.1);
+  box-shadow: 0 3px 10px rgba(40, 167, 69, 0.3);
+}
+
+.asiento.ocupado {
+  background-color: var(--color-medium);
+  color: var(--color-dark);
+  cursor: not-allowed;
+}
+
+.asiento.ocupado::after {
+  content: '';
+  position: absolute;
+  width: 80%;
+  height: 2px;
+  background-color: var(--color-danger);
+  transform: rotate(-45deg);
+}
+
+.fila-asientos {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--space-md);
+  justify-content: center;
+}
+
+.numero-fila {
+  width: 30px;
+  text-align: center;
+  font-weight: 600;
+  margin-right: var(--space-lg);
+  color: var(--color-dark);
+}
+
+.asientos-fila {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.separador {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-medium), transparent);
+  margin: var(--space-lg) 0;
+}
+
+.acciones {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-medium);
+}
+
+.btn {
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--border-radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:disabled {
+  background-color: var(--color-medium);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.btn-outline:hover {
+  background-color: rgba(0, 53, 128, 0.05);
+}
+
+.spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--color-white);
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .seleccion-asiento-container {
+    padding: var(--space-md);
+    margin: var(--space-md);
+  }
+  
+  .asiento {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+  
+  .leyenda {
+    gap: var(--space-md);
+  }
+  
+  .btn {
+    padding: var(--space-sm) var(--space-md);
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,115 @@
+.navbar {
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: var(--space-sm) 0;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logo-subtext {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--color-dark);
+  letter-spacing: 1px;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.navbar-link {
+  position: relative;
+  padding: var(--space-sm) 0;
+  font-weight: 500;
+  color: var(--color-dark);
+  transition: color var(--transition-fast);
+}
+
+.navbar-link:hover {
+  color: var(--color-primary);
+}
+
+.navbar-link.active {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.navbar-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-secondary);
+  border-radius: 3px 3px 0 0;
+}
+
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-primary);
+  font-size: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar-menu {
+    position: fixed;
+    top: 68px;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-white);
+    flex-direction: column;
+    align-items: center;
+    padding: var(--space-md);
+    gap: var(--space-md);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-150%);
+    transition: transform var(--transition-normal);
+  }
+  
+  .navbar-menu.open {
+    transform: translateY(0);
+  }
+  
+  .navbar-toggle {
+    display: block;
+  }
+  
+  .navbar-link.active::after {
+    display: none;
+  }
+}

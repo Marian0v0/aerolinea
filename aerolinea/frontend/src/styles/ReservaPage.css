@@ -1,0 +1,51 @@
+.reserva-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.lista-vuelos {
+  margin-top: 2rem;
+}
+
+.vuelos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.vuelo-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.vuelo-info h3 {
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.vuelo-info p {
+  margin: 0.3rem 0;
+  color: var(--color-text-light);
+}
+
+.btn-seleccionar {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.btn-seleccionar:hover {
+  background-color: #002244;
+}

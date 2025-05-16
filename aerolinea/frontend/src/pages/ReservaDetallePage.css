@@ -1,0 +1,225 @@
+.reserva-detalle-page {
+  padding: var(--space-xl) 0;
+}
+
+.reserva-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: var(--color-white);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.reserva-header {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  color: var(--color-white);
+  padding: var(--space-xl);
+  text-align: center;
+}
+
+.reserva-header h1 {
+  color: var(--color-white);
+  margin-bottom: var(--space-sm);
+}
+
+.reserva-codigo {
+  font-size: 1.2rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: 20px;
+  display: inline-block;
+  font-weight: 600;
+}
+
+.reserva-estado {
+  display: inline-block;
+  background-color: var(--color-success);
+  color: var(--color-white);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: 20px;
+  font-weight: 600;
+  margin-left: var(--space-sm);
+  font-size: 0.9rem;
+}
+
+.reserva-body {
+  padding: var(--space-xl);
+}
+
+.reserva-section {
+  margin-bottom: var(--space-xl);
+}
+
+.reserva-section h2 {
+  color: var(--color-primary);
+  margin-bottom: var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  position: relative;
+  padding-bottom: var(--space-sm);
+}
+
+.reserva-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: var(--color-secondary);
+}
+
+.vuelo-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.vuelo-info-item {
+  background-color: var(--color-light);
+  padding: var(--space-md);
+  border-radius: var(--border-radius-md);
+}
+
+.vuelo-info-item h3 {
+  color: var(--color-primary);
+  font-size: 1rem;
+  margin-bottom: var(--space-sm);
+}
+
+.vuelo-info-item p {
+  font-weight: 500;
+}
+
+.pasajero-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-lg);
+}
+
+.pasajero-card {
+  background-color: var(--color-light);
+  padding: var(--space-md);
+  border-radius: var(--border-radius-md);
+}
+
+.pasajero-card h3 {
+  color: var(--color-primary);
+  font-size: 1rem;
+  margin-bottom: var(--space-sm);
+}
+
+.metodos-pago-section {
+  background-color: var(--color-light);
+  padding: var(--space-lg);
+  border-radius: var(--border-radius-md);
+  margin-top: var(--space-xl);
+}
+
+.metodos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.metodo-card {
+  background: var(--color-white);
+  padding: var(--space-md);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-medium);
+}
+
+.metodo-tipo {
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.metodo-numero {
+  font-family: monospace;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  margin-bottom: var(--space-sm);
+}
+
+.metodo-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: var(--color-dark);
+}
+
+.btn-agregar-metodo {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--space-sm) var(--space-md);
+  border: none;
+  border-radius: var(--border-radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.btn-agregar-metodo:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.formulario-pago-container {
+  margin-top: var(--space-lg);
+  background: var(--color-white);
+  padding: var(--space-lg);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.reserva-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-medium);
+}
+
+.btn-volver {
+  background-color: transparent;
+  color: var(--color-primary);
+  padding: var(--space-md) var(--space-lg);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--border-radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-volver:hover {
+  background-color: rgba(0, 53, 128, 0.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .reserva-header {
+    padding: var(--space-lg);
+  }
+  
+  .reserva-body {
+    padding: var(--space-lg);
+  }
+  
+  .reserva-actions {
+    flex-direction: column;
+  }
+  
+  .btn-volver {
+    width: 100%;
+  }
+}

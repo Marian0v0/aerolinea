@@ -1,0 +1,121 @@
+.historial-login {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.historial-login h2 {
+  color: #003580;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.historial-login h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #ffcc00;
+}
+
+.historial-login form {
+  display: flex;
+  flex-direction: column;
+}
+
+.historial-login .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.historial-login label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #003580;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.historial-login input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.historial-login input:focus {
+  outline: none;
+  border-color: #003580;
+  box-shadow: 0 0 0 2px rgba(0, 53, 128, 0.1);
+}
+
+.historial-login .error-message {
+  color: #d32f2f;
+  background-color: #fde8e8;
+  padding: 0.8rem;
+  border-radius: 5px;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.historial-login button {
+  padding: 0.8rem;
+  background-color: #003580;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.historial-login button:hover {
+  background-color: #002366;
+  transform: translateY(-2px);
+}
+
+.historial-login button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Efecto de carga para el botón */
+.historial-login button[disabled]::after {
+  content: '...';
+  display: inline-block;
+  width: 1em;
+  text-align: left;
+  animation: dots 1.5s steps(5, end) infinite;
+}
+
+@keyframes dots {
+  0%, 20% { content: '.'; }
+  40% { content: '..'; }
+  60%, 100% { content: '...'; }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .historial-login {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .historial-login h2 {
+    font-size: 1.5rem;
+  }
+}
